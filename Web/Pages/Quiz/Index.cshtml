@@ -1,0 +1,15 @@
+﻿@page
+@using ApplicationCore.Interfaces.Repository
+@inject IGenericRepository<Quiz, int> quizRepo
+@model BackendLab01.Pages.Quiz.IndexModel
+@{
+	<ul>
+		@foreach (var q in quizRepo.FindAll())
+		{
+			<li>
+				<a asp-page="/Quiz/Item" asp-route-itemid="1" asp-route-quizid="@q.Id">@q.Title</a>
+			</li>
+		}
+	</ul>
+	
+}

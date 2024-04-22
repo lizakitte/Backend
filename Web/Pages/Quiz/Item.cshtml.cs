@@ -1,3 +1,4 @@
+using ApplicationCore.Interfaces.Criteria;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
@@ -46,6 +47,14 @@ namespace BackendLab01.Pages
 
         public IActionResult OnPost()
         {
+            _userService.SaveUserAnswerForQuiz(QuizId, 1, ItemId, UserAnswer);
+            if(_userService.FindQuizById(QuizId).Items.Count < ItemId + 1)
+            {
+                return RedirectToPage("Summary", 
+                    new {correct = _userService.CountCorrectAnswersForQuizFilledByUser(QuizId, 1),
+                    all = _userService.FindQuizById(QuizId).Items.Count
+                    });
+            }
             return RedirectToPage("Item", new {quizId = QuizId, itemId = ItemId + 1});
         }
     }
