@@ -13,6 +13,7 @@ builder.Services.AddSingleton<IGenericRepository<QuizItem, int>, MemoryGenericRe
 builder.Services.AddSingleton<IGenericRepository<QuizItemUserAnswer, string>, 
     MemoryGenericRepository<QuizItemUserAnswer, string>>();
 builder.Services.AddSingleton<IQuizUserService, QuizUserService>();
+builder.Services.AddSingleton<IQuizAdminService, QuizAdminService>();
 
 
 var app = builder.Build();

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebApi.Dto;
 
-namespace ApplicationCore.Controllers
+namespace WebApi.Controllers
 {
 	[ApiController]
 	[Route("/api/v1/quizzes")]

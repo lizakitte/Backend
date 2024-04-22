@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "UnitTest\UnitTe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp", "BlazorApp\BlazorApp.csproj", "{19FF5AB2-27D4-45F5-AAE0-D8F9FD461FC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{8421AEB4-2458-4D89-BC60-61C203EBE2D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,8 +41,15 @@ Global
 		{19FF5AB2-27D4-45F5-AAE0-D8F9FD461FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19FF5AB2-27D4-45F5-AAE0-D8F9FD461FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19FF5AB2-27D4-45F5-AAE0-D8F9FD461FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8421AEB4-2458-4D89-BC60-61C203EBE2D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8421AEB4-2458-4D89-BC60-61C203EBE2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8421AEB4-2458-4D89-BC60-61C203EBE2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8421AEB4-2458-4D89-BC60-61C203EBE2D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {859F665C-81C8-40B1-BB0C-D4ED2800187D}
 	EndGlobalSection
 EndGlobal
