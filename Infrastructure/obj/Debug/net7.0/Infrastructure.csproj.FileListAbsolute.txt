@@ -13,3 +13,5 @@ C:\Users\Liza\Desktop\wsei\backend\Infrastructure\obj\Debug\net7.0\Infrastructur
 C:\Users\Liza\Desktop\wsei\backend\Infrastructure\obj\Debug\net7.0\refint\Infrastructure.dll
 C:\Users\Liza\Desktop\wsei\backend\Infrastructure\obj\Debug\net7.0\Infrastructure.pdb
 C:\Users\Liza\Desktop\wsei\backend\Infrastructure\obj\Debug\net7.0\ref\Infrastructure.dll
+C:\Users\Liza\Desktop\wsei\backend\Infrastructure\bin\Debug\net7.0\Infrastructure.runtimeconfig.json
+C:\Users\Liza\Desktop\wsei\backend\Infrastructure\obj\Debug\net7.0\Infrastructure.genruntimeconfig.cache

@@ -6,6 +6,8 @@ using AutoMapper;
 using FluentValidation.AspNetCore;
 using FluentValidation;
 using WebApi.Validators;
+using Infrastructure;
+using Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,12 +27,15 @@ builder.Services.AddScoped<IValidator<QuizItem>, QuizItemValidator>();
 
 builder.Services.AddTransient<IGenericGenerator<int>, IntGenerator>();
 
+builder.Services.AddDbContext<QuizDbContext>();
+
 builder.Services.AddSingleton<IGenericRepository<Quiz, int>, MemoryGenericRepository<Quiz, int>>();
 builder.Services.AddSingleton<IGenericRepository<QuizItem, int>, MemoryGenericRepository<QuizItem, int>>();
 builder.Services.AddSingleton<IGenericRepository<QuizItemUserAnswer, string>,
-	MemoryGenericRepository<QuizItemUserAnswer, string>>();
-builder.Services.AddSingleton<IQuizUserService, QuizUserService>();
+   MemoryGenericRepository<QuizItemUserAnswer, string>>();
 builder.Services.AddSingleton<IQuizAdminService, QuizAdminService>();
+
+builder.Services.AddScoped<IQuizUserService, QuizUserServiceEF>();
 
 var app = builder.Build();
 
@@ -47,6 +52,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Seed();
+// app.Seed();
 
 app.Run();

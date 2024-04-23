@@ -2,6 +2,7 @@
 using BackendLab01;
 using FluentValidation;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.JsonPatch.Operations;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Dto;
 
@@ -98,9 +99,9 @@ namespace WebApi.Controllers
 				}
 
 				quiz.Items.RemoveAt(quiz.Items.Count - 1);
-				_service.AddQuizItemToQuiz(quizId, item);
+				_adminService.AddQuizItemToQuiz(quizId, item);
 			}
-			return Ok(_service.FindAllQuizzes().FirstOrDefault(q => q.Id == quizId));
+			return Ok(_adminService.FindAllQuizzes().FirstOrDefault(q => q.Id == quizId));
 		}
 
 		[HttpDelete]
