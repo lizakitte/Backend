@@ -29,6 +29,17 @@ public class QuizAdminService : IQuizAdminService
         return quizRepository.Add(new Quiz( 0, title: title, items: items));
     }
 
+    public Quiz AddQuiz(Quiz quiz)
+    {
+        return quizRepository.Add(quiz);
+    }
+
+    public void AddQuizItemToQuiz(int quizId, QuizItem item)
+    {
+        var quiz = quizRepository.FindById(quizId);
+        quiz?.Items.Add(item);
+    }
+
     public List<QuizItem> FindAllQuizItems()
     {
         return itemRepository.FindAll();

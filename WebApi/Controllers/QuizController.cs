@@ -52,5 +52,26 @@ namespace WebApi.Controllers
 		{
 			return _userService.CountCorrectAnswersForQuizFilledByUser(quizId, userId);
 		}
+
+		[Route("{quizId}/answers/{userId}")]
+		[HttpGet]
+		public ActionResult<object> GetQuizFeedback(int quizId, int userId)
+		{
+			var feedback = _userService.GetUserAnswersForQuiz(quizId, userId);
+			return new
+			{
+				quizId = quizId,
+				userId = userId,
+				totalQuestions = _userService.FindQuizById(quizId)?.Items.Count ?? 0,
+				answers = feedback.Select(a =>
+					new
+					{
+						question = a.QuizItem.Question,
+						answer = a.Answer,
+						isCorrect = a.IsCorrect()
+					}
+				).AsEnumerable()
+			};
+		}
 	}
 }
