@@ -26,11 +26,11 @@ public class QuizUserService: IQuizUserService
         return quizRepository.FindById(id);
     }
 
-    public void SaveUserAnswerForQuiz(int quizId, int userId, int quizItemId, string answer)
+    public QuizItemUserAnswer SaveUserAnswerForQuiz(int quizId, int userId, int quizItemId, string answer)
     {
         QuizItem? item = itemRepository.FindById(quizItemId);
         var userAnswer = new QuizItemUserAnswer(quizItem: item, userId: userId, answer: answer, quizId: quizId);
-        answerRepository.Add(userAnswer);
+        return answerRepository.Add(userAnswer);
     }
 
 

@@ -84,9 +84,9 @@ namespace Infrastructure.Services
 			}
 		}
 
-		void IQuizUserService.SaveUserAnswerForQuiz(int quizId, int userId, int quizItemId, string answer)
-        {
-            throw new NotImplementedException();
-        }
+		//void IQuizUserService.SaveUserAnswerForQuiz(int quizId, int userId, int quizItemId, string answer)
+  //      {
+  //          throw new NotImplementedException();
+  //      }
     }
 }

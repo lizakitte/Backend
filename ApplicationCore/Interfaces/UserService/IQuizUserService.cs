@@ -8,7 +8,7 @@ public interface IQuizUserService
 
     Quiz? FindQuizById(int id);
 
-    void SaveUserAnswerForQuiz(int quizId, int userId, int quizItemId, string answer);
+	QuizItemUserAnswer SaveUserAnswerForQuiz(int quizId, int userId, int quizItemId, string answer);
 
     List<QuizItemUserAnswer> GetUserAnswersForQuiz(int quizId, int userId);
 

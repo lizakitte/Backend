@@ -1,4 +1,5 @@
 ﻿using BackendLab01;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -39,12 +40,12 @@ namespace WebApi.Controllers
 			return _userService.FindAllQuizzes().Select(QuizDto.Of);
 		}
 
-		[HttpPost]
-		[Route("{quizId}/items/{itemId}")]
-		public void SaveAnswer([FromBody] QuizItemAnswerDto dto, int quizId, int itemId)
-		{
-			_userService.SaveUserAnswerForQuiz(quizId, dto.UserId, itemId, dto.Answer);
-		}
+		//[HttpPost]
+		//[Route("{quizId}/items/{itemId}")]
+		//public void SaveAnswer([FromBody] QuizItemAnswerDto dto, int quizId, int itemId)
+		//{
+		//	_userService.SaveUserAnswerForQuiz(quizId, dto.UserId, itemId, dto.Answer);
+		//}
 
 		[HttpGet]
 		[Route("{quizId}/{userId}")]
@@ -72,6 +73,22 @@ namespace WebApi.Controllers
 					}
 				).AsEnumerable()
 			};
+		}
+
+		[HttpPost]
+		[Authorize(Policy = "Bearer")]
+		[Route("{quizId}/items/{itemId}/answers")]
+		public ActionResult SaveAnswer([FromBody] QuizItemAnswerDto dto, int quizId, int itemId)
+		{
+			try
+			{
+				var answer = _userService.SaveUserAnswerForQuiz(quizId, itemId, dto.UserId, dto.Answer);
+				return Created("", answer);
+			}
+			catch (Exception e)
+			{
+				return BadRequest(e.Message);
+			}
 		}
 	}
 }
