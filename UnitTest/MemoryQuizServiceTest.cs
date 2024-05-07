@@ -29,9 +29,11 @@ public class MemoryQuizServiceTest
     [Fact]
     public void CreateItemsTest()
     {
-        _aservice.AddQuizItem(points: 2, correctAnswer: "A", incorrectAnswers: new List<string>(){"B", "C", "D"},question: "Pierwsza litera alfabetu?" );
+        int previousCount = _aservice.FindAllQuizItems().Count();
+        _aservice.AddQuizItem(points: 2, correctAnswer: "A", incorrectAnswers: 
+            new List<string>(){"B", "C", "D"},question: "Pierwsza litera alfabetu?" );
         var items = _aservice.FindAllQuizItems();
-        Assert.Equal(1, items.Count());
+        Assert.Equal(previousCount + 1, items.Count());
     }
     [Fact]
     public void CreateQuizTest()

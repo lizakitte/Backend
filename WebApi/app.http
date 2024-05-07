@@ -17,9 +17,9 @@ Content-Type: application/json-patch+json
 
 ###
 
-POST  https://localhost:7196/api/v1/quizzes/1/items/1/answer
+POST https://localhost:7196/api/v1/quizzes/1/items/1/answers
 Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoia2Fyb2wiLCJnZW5kZXIiOiJtYWxlIiwiZW1haWwiOiJrYXJvbEB3c2VpLmVkdS5wbCIsImV4cCI6MTcxMzkwMDM2OSwianRpIjoiM2ZjZTRiMGYtNWUyNy00NGQ5LWE2MjgtN2RkNjE5YzZlMzhlIiwiYXVkIjoid3NlaSIsImlzcyI6IndzZWkifQ.kbd2jAkeYCHldngWb8LBAuVQ1ULaJBrKGZ1nbDNZNL8
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoia2Fyb2wiLCJnZW5kZXIiOiJtYWxlIiwiZW1haWwiOiJrYXJvbEB3c2VpLmVkdS5wbCIsImV4cCI6MTcxMzk0ODA4MSwianRpIjoiZTU4M2ZjYjYtOGJhMS00NzA3LThlMTUtYjMxMzJkNzAxNDMyIiwiYXVkIjoid3NlaSIsImlzcyI6IndzZWkifQ.IWxCtNR76HR2Eg1bQ3CGA4WeMrdnQaeoXiEPlIMkgy4
 
 {
   "userId": 1,

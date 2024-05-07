@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "8gRGp6KiJKCAvZOZo0gSbOplSRqQBQEQCknFWJqIpYA=",
+  "Source": "IntegrationTest",
+  "BasePath": "_content/IntegrationTest",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Liza\\Desktop\\wsei\\backend\\WebApi\\WebApi.csproj",
+      "Version": 2,
+      "Source": "WebApi",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -12,7 +12,10 @@ namespace Infrastructure
 {
     public class QuizDbContext : IdentityDbContext<UserEntity, UserRole, int>
 	{
-        public DbSet<QuizEntity> Quizzes { get; set; }
+		public QuizDbContext(DbContextOptions<QuizDbContext> options) : base(options)
+		{
+		}
+		public DbSet<QuizEntity> Quizzes { get; set; }
         public DbSet<QuizItemEntity> QuizItems { get; set; }
         public DbSet<QuizItemUserAnswerEntity> UserAnswers { get; set; }
         public DbSet<UserEntity> Users { get; set; }
